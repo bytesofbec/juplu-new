@@ -28,7 +28,7 @@ SECRET_KEY = 'gowvh$wq^*z-3s0fl^&!7*k)ai=^2j3t=j@=!g32n$biesj1y='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','now.sh','www.juplu.in', 'juplu.in', 'juplu-host.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app','now.sh','www.juplu.in', 'juplu.in', 'juplu-host.herokuapp.com', '127.0.0.1', 'localhost', '*']
 
 
 # Application definition
@@ -100,7 +100,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 print(MEDIA_ROOT)
 
