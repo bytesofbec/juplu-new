@@ -4,7 +4,7 @@
       {
         "src": "juplu/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "50mb", "runtime": "python3.9", "excludeFiles": "staticfiles/**" }
+        "config": { "maxLambdaSize": "50mb", "runtime": "python3.9", "excludeFiles": ["staticfiles/**", "juplu/static/**"] }
       },
       {
         "src": "build_files.sh",
