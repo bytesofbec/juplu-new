@@ -1,14 +1,15 @@
-import os
-import sys
-import traceback
+"""
+WSGI config for juplu project.
 
-def application(environ, start_response):
-    try:
-        from django.core.wsgi import get_wsgi_application
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'juplu.settings')
-        _app = get_wsgi_application()
-        return _app(environ, start_response)
-    except Exception as e:
-        err = traceback.format_exc()
-        start_response('200 OK', [('Content-Type', 'text/plain')])
-        return [err.encode('utf-8')]
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
+"""
+
+import os
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'juplu.settings')
+
+application = get_wsgi_application()
